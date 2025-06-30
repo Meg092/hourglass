@@ -11,7 +11,7 @@ class ClockInnerView extends GetView<ClockInnerLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.reilly.value
+          () => controller.daugherty.value
               ? const CircularProgressIndicator(color: Colors.blueAccent)
               : buildError(),
         ),
@@ -26,7 +26,7 @@ class ClockInnerView extends GetView<ClockInnerLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.mqzab();
+              controller.cawo();
             },
             icon: const Icon(
               Icons.restart_alt,

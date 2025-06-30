@@ -5,8 +5,11 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:slider_clock/pages/clock_break/clock_break_binding.dart';
 import 'package:slider_clock/pages/clock_break/clock_break_view.dart';
+import 'package:slider_clock/pages/clock_inner/clock_inner_binding.dart';
+import 'package:slider_clock/pages/clock_inner/clock_inner_view.dart';
 import 'package:slider_clock/pages/clock_main/clock_main_binding.dart';
 import 'package:slider_clock/pages/clock_main/clock_main_view.dart';
+import 'package:slider_clock/pages/clock_main/reload_back.dart';
 import 'package:slider_clock/pages/clock_setting/clock_setting_binding.dart';
 import 'package:slider_clock/pages/clock_setting/clock_setting_view.dart';
 
@@ -38,8 +41,10 @@ List<List<Color>> bgColors = const [
 ];
 
 List<GetPage<dynamic>> Body = [
+  GetPage(name: '/', page: () => const ClockInnerView(), binding: ClockInnerBinding()),
   GetPage(name: '/ClockMainPage', page: () => const ClockMainPage(), binding: ClockMainBinding()),
   GetPage(name: '/ClockBreakPage', page: () => ClockBreakView(), binding: ClockBreakBinding()),
+  GetPage(name: '/ClockMainBack', page: () => const ReloadBack()),
   GetPage(name: '/ClockSettingPage', page: () => ClockSettingPage(), binding: ClockSettingBinding()),
 ];
 
@@ -69,7 +74,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Body,
-      initialRoute: '/ClockMainPage',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,

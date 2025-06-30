@@ -21,16 +21,10 @@ class ClockBreakView extends GetView<ClockBreakLogic> {
           physics: const AlwaysScrollableScrollPhysics(),
           child: <Widget>[
             const SizedBox(
-              height: 30,
-            ),
-            Image.asset(
-              'assets/noNetwork.webp',
-              width: 157,
-              height: 152.5,
-              fit: BoxFit.cover,
+              height: 80,
             ),
             const Text(
-              'I was distracted on the Internet',
+              'The network is disconnected. Please check the network and click Refresh below.',
               style: TextStyle(color: Colors.black45),
             ),
             const SizedBox(
